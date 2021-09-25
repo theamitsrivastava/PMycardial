@@ -1,0 +1,300 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <!-- Starts image section -->
+    <div class="row justify-content-md-center mb-4">
+        <h2 class='text-primary'>Predict Lethal Outcome (Myocardial Cause) </h2>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="{{url_for('static', filename='images/Myocardial4.jpg')}}" class="img-thumbnail" />
+                <div class="caption">
+                     <p><strong></strong></p>
+                   </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="{{url_for('static', filename='images/Myocardial1.jpg')}}" class="img-thumbnail" />
+                <div class="caption">
+                     <p><strong></strong></p>
+                   </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="{{url_for('static', filename='images/Myocardial3.jpg')}}" class="img-thumbnail" />
+                <div class="caption">
+                     <p><strong></strong></p>
+                   </div>
+            </div>
+        </div>
+    </div>
+    <!-- Ends image section -->
+    
+    <!-- Starts form section -->
+    <div class="form-container ">
+        <form class="form-horizontal" action = "/predict/" method="post">
+        
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="AGE">AGE:</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="AGE" name="AGE">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="STENOK_AN">STENOK_AN (0-6):</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="STENOK_AN" name="STENOK_AN">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="FK_STENOK">FK_STENOK (0-4):</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="FK_STENOK" name="FK_STENOK">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="IBS_POST">IBS_POST (0-2):</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="IBS_POST" name="IBS_POST">
+              </div>
+            </div>
+             
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="ZSN_A">ZSN_A (0-4):</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="ZSN_A" name="ZSN_A">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="nr_04">NR_04 (0/1):</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="nr_04" name="nr_04">
+              </div>
+            </div>
+			            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="S_AD_KBRIG">S_AD_KBRIG (mmHg):</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="S_AD_KBRIG" name="S_AD_KBRIG">
+              </div>
+            </div>
+			            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="D_AD_KBRIG">D_AD_KBRIG:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="D_AD_KBRIG" name="D_AD_KBRIG">
+              </div>
+            </div>
+			            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="S_AD_ORIT">S_AD_ORIT:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="S_AD_ORIT" name="S_AD_ORIT">
+              </div>
+            </div>
+			            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="D_AD_ORIT">D_AD_ORIT:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="D_AD_ORIT" name="D_AD_ORIT">
+              </div>
+            </div>
+			            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="K_SH_POST">K_SH_POST:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="K_SH_POST" name="K_SH_POST">
+              </div>
+            </div>
+			            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="ant_im">ANT_IM:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="ant_im" name="ant_im">
+              </div>
+            </div>
+			            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="lat_im">LAT_IM:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="lat_im" name="lat_im">
+              </div>
+            </div>
+			            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="ritm_ecg_p_07">RITM_ECG_P_07:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="ritm_ecg_p_07" name="ritm_ecg_p_07">
+              </div>
+            </div>
+			            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="n_r_ecg_p_04">N_R_ECG_P_04:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="n_r_ecg_p_04" name="n_r_ecg_p_04">
+              </div>
+            </div>
+			            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="n_p_ecg_p_10">N_P_ECG_P_10:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="n_p_ecg_p_10" name="n_p_ecg_p_10">
+              </div>
+            </div>
+				            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="n_p_ecg_p_12">N_P_ECG_P_12:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="n_p_ecg_p_12" name="n_p_ecg_p_12">
+              </div>
+            </div>
+				            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="K_BLOOD">K_BLOOD:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="K_BLOOD" name="K_BLOOD">
+              </div>
+            </div>
+				            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="NA_BLOOD">NA_BLOOD:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="NA_BLOOD" name="NA_BLOOD">
+              </div>
+            </div>
+				            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="ALT_BLOOD">ALT_BLOOD:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="ALT_BLOOD" name="ALT_BLOOD">
+              </div>
+            </div>
+				            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="AST_BLOOD">AST_BLOOD:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="AST_BLOOD" name="AST_BLOOD">
+              </div>
+            </div>
+				            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="L_BLOOD">L_BLOOD:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="L_BLOOD" name="L_BLOOD">
+              </div>
+            </div>
+				            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="ROE">ROE:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="ROE" name="ROE">
+              </div>
+            </div>
+				            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="TIME_B_S">TIME_B_S:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="TIME_B_S" name="TIME_B_S">
+              </div>
+            </div>
+				            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="R_AB_1_n">R_AB_1_N:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="R_AB_1_n" name="R_AB_1_n">
+              </div>
+            </div>
+				            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="R_AB_3_n">R_AB_3_N:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="R_AB_3_n" name="R_AB_3_n">
+              </div>
+            </div>
+								            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="NA_KB">NA_KB:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="NA_KB" name="NA_KB">
+              </div>
+            </div>
+				            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="NOT_NA_KB">NOT_NA_KB:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="NOT_NA_KB" name="NOT_NA_KB">
+              </div>
+            </div>
+							            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="NITR_S">NITR_S:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="NITR_S" name="NITR_S">
+              </div>
+            </div>
+							            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="NA_R_1_n">NA_R_1_N:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="NA_R_1_n" name="NA_R_1_n">
+              </div>
+            </div>
+							            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="GEPAR_S_n">GEPAR_S_N:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="GEPAR_S_n" name="GEPAR_S_n">
+              </div>
+            </div>
+							            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="RAZRIV">RAZRIV:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="RAZRIV" name="RAZRIV">
+              </div>
+            </div>
+							            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="ZSN">ZSN:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="ZSN" name="ZSN">
+              </div>
+            </div>
+							            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="REC_IM">REC_IM:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="REC_IM" name="REC_IM">
+              </div>
+            </div>
+							            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="DRESSLER">DRESSLER:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="DRESSLER" name="DRESSLER">
+              </div>
+            </div>
+						
+            <div class="form-group row"> 
+            <label class="control-label col-sm-2" for="">&nbsp;</label>                
+              <div class="col-sm-offset-2 col-sm-4">
+                <button type="submit" class="btn btn-primary">Predict</button>
+              </div>
+            </div>
+          </form>
+        <!-- Ends form section -->
+        
+        
+    </div>
+
+
+{% endblock %}
