@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <div class="row justify-content-md-center mb-4">
+        <h3 class='text-primary'>Prediction is {{ prediction[0] }}</h3>
+    
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="thumbnail">
+            {% if prediction[0] == 0.0 %}
+                <img src="{{url_for('static', filename='images/Myocardial1.jpg')}}" class="img-thumbnail" />
+            {% endif %}
+        </div>
+    </div>
+        
+    <div class="row justify-content-md-center">
+        <div class="thumbnail">
+            {% if prediction[0] == 1.0 %}
+                <img src="{{url_for('static', filename='images/1_cardiogenic_shock.jpg')}}" class="img-thumbnail" />
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="thumbnail">
+            {% if prediction[0] == 2.0 %}
+                <img src="{{url_for('static', filename='images/2_pulmonary_edema.jpg')}}" class="img-thumbnail" />
+            {% endif %}
+        </div>
+    </div>
+    
+	<div class="row justify-content-md-center">
+        <div class="thumbnail">
+            {% if prediction[0] == 3.0 %}
+                <img src="{{url_for('static', filename='images/3_myocardial_rupture.jpg')}}" class="img-thumbnail" />
+            {% endif %}
+        </div>
+    </div>
+        
+    <div class="row justify-content-md-center">
+        <div class="thumbnail">
+            {% if prediction[0] == 4.0 %}
+                <img src="{{url_for('static', filename='images/4_congestive_heart_failure.jpg')}}" class="img-thumbnail" />
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="thumbnail">
+            {% if prediction[0] == 5.0 %}
+                <img src="{{url_for('static', filename='images/5_thromboembolism.jpg')}}" class="img-thumbnail" />
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="thumbnail">
+            {% if prediction[0] == 6.0 %}
+                <img src="{{url_for('static', filename='images/6_asystole.jpg')}}" class="img-thumbnail" />
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="thumbnail">
+            {% if prediction[0] == 7.0 %}
+                <img src="{{url_for('static', filename='images/7_ventricular_fibrillation.jpg')}}" class="img-thumbnail" />
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}
