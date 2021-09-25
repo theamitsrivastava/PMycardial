@@ -5,6 +5,3 @@ numpy
 pandas
 request
 scipy
-tqdm
-urllib3
-utils
