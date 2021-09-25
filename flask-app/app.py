@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import numpy as np
 import joblib
 app = Flask(__name__)
-@app.route('/')
+@app.route('/flask-app/')
 def home():
     return render_template('home.html')
 @app.route('/predict/', methods=['GET','POST'])
