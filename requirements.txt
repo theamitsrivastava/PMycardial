@@ -3,5 +3,4 @@ gunicorn
 Jinja2
 numpy
 pandas
-request
 scipy
